@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.mohitmvvmfirebase.ui.activity.dashboard.HomeViewModel" />
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/txtLoginTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Welcome"
+            android:gravity="center"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+
+
+        <ImageView
+            android:id="@+id/imageView_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@{viewmodel.user.photoUrl}" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_welcome_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="@{viewmodel.userName}"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_welcome_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@{viewmodel.user.email}"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_welcome_userid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@{viewmodel.user.uid}"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+
+                <Button
+                    android:id="@+id/logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginRight="20dp"
+                    android:text="logout"
+                    android:onClick="@{(v) -> viewmodel.logout(v)}"
+                    android:textColor="@android:color/white" />
+
+
+                <Button
+                    android:id="@+id/add_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="20dp"
+                    android:text="add_database"
+                    android:onClick="@{(v) -> viewmodel.addDB(v)}"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/logout" />
+
+
+                <Button
+                    android:id="@+id/storage_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="20dp"
+                    android:text="storage"
+                    android:onClick="@{(v) -> viewmodel.storage(v)}"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/add_btn" />
+
+
+                                <Button
+                                    android:id="@+id/list_btn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="40dp"
+                                    android:layout_marginRight="20dp"
+                                    android:text="db_list"
+                                    android:onClick="@{(v) -> viewmodel.db_list(v)}"
+                                    android:layout_marginBottom="20dp"
+                                    android:textColor="@android:color/white"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/add_btn" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Mohit Mvvm Firebase</string>
+    <string name="name">name</string>
+    <string name="email">Email</string>
+</resources>
